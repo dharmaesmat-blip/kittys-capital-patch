@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitty’s Capital Patch</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Fredoka:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <h1>Kitty’s Capital Patch</h1>
+            <div class="cat-wrapper">
+                <div class="cat">
+                    <div class="eye left"></div>
+                    <div class="eye right"></div>
+                    <div class="nose"></div>
+                </div>
+            </div>
+            <p style="margin-top: 2rem; max-width: 500px; text-align: center;">Ask anything! (e.g., <b>food, language,
+                    weather, flag colors, or symbols</b>) to guess the mystery country! Grow 5 flowers to win.</p>
+            <button id="start-btn">Start Playing</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen">
+            <div class="progress-banner">Flowers grown: <span id="flower-count">0</span>/5</div>
+
+            <div class="game-container">
+                <div class="main-visuals">
+                    <!-- Log -->
+                    <div class="log-area" id="question-log">
+                        <div style="color: #ff69b4; font-weight: bold; margin-bottom: 10px;">Question Log:</div>
+                    </div>
+
+                    <!-- Cat -->
+                    <div class="cat-wrapper">
+                        <div id="speech-bubble" class="speech-bubble">
+                            Meow! Ask me anything about the country!
+                        </div>
+                        <div class="cat">
+                            <div class="eye left"></div>
+                            <div class="eye right"></div>
+                            <div class="nose"></div>
+                            <div id="watering-can" class="watering-can">
+                                <div class="watering-can-nozzle"></div>
+                                <div class="water-droplets">
+                                    <div class="droplet" style="left: 10px; animation-delay: 0s;"></div>
+                                    <div class="droplet" style="left: 20px; animation-delay: 0.1s;"></div>
+                                    <div class="droplet" style="left: 30px; animation-delay: 0.2s;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Garden -->
+                    <div class="garden-area" id="garden">
+                        <!-- 5 flower slots -->
+                        <div class="flower-slot" id="slot-0"></div>
+                        <div class="flower-slot" id="slot-1"></div>
+                        <div class="flower-slot" id="slot-2"></div>
+                        <div class="flower-slot" id="slot-3"></div>
+                        <div class="flower-slot" id="slot-4"></div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="hint-banner" id="hint-text"></div>
+
+                    <div class="input-row">
+                        <input type="text" id="question-input" placeholder="Ask me yes or no question"
+                            aria-label="Ask question">
+                        <button id="ask-btn">Ask (<span id="q-left">15</span> left)</button>
+                    </div>
+
+                    <div class="input-row">
+                        <input type="text" id="guess-input" placeholder="Guess the country name..."
+                            aria-label="Guess country">
+                        <button id="guess-btn" style="background-color: var(--dark-green);">Guess!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="screen">
+            <h1>Fantastic Job!</h1>
+            <p>You've grown 5 beautiful flowers and identified all the countries!</p>
+            <div class="garden-area total-garden" id="final-garden"></div>
+            <br><br>
+            <button id="restart-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
